@@ -1,0 +1,16 @@
+{
+    "contents" : "## Put comments here that give an overall description of what your\n## functions do\n\n## Write a short comment describing this function\n## I did the same things as in the example \n## expect using i for the inverse and inverse in the function names\nmakeCacheMatrix <- function(x = matrix()) {\n    #First set the inverse i to NULL\n    i <- NULL\n    #Set x to y and set i to NULL\n    set <- function(y)\n    {\n      x <<- y\n      i <<- NULL\n    }\n    #Return the matrix x\n    get <- function() x\n    #Set inverse i \n    setinverse <- function(inverse) i <<- inverse\n    #Return inverse i\n    getinverse <- function() i\n    #Define functions\n    list(set = set, get = get, setinverse = setinverse, getinverse = getinverse)\n}\n\n## Write a short comment describing this function\n## I did the same things as in the example \n## expect using i for the inverse and solve() to get the inverse if needed\ncacheSolve <- function(x, ...) {\n    ## Return a matrix that is the inverse of 'x'\n  \n    #Check if inverse has been already calculated\n    i <- x$getinverse()\n    if(!is.null(i)) \n    { \n      #Actually nothing further needs to be done but I display the message for information\n      message(\"getting cached data\")\n    }\n    else\n    {      \n      #If not then calculate the inverse by using solve()\n      data <- x$get()\n      i <- solve(data, ...)\n      x$setinverse(i)\n    }\n    #Return the inverse i\n    i\n}\n",
+    "created" : 1423401941074.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2412949567",
+    "id" : "BCD5EF97",
+    "lastKnownWriteTime" : 1423406288,
+    "path" : "E:/Courses/R/ProgrammingAssignment2/cachematrix.R",
+    "project_path" : null,
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}
